@@ -2264,6 +2264,9 @@ include "RISCVInstrInfoZicond.td"
 include "RISCVInstrInfoZicfiss.td"
 include "RISCVInstrInfoZilsd.td"
 
+//APEX-Team modification
+include "RISCVInstrInfoAPEX.td"
+
 // Scalar FP
 include "RISCVInstrInfoF.td"
 include "RISCVInstrInfoD.td"
