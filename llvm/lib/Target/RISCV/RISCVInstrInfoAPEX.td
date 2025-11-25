@@ -21,3 +21,7 @@ let mayLoad = 0, mayStore = 0, hasSideEffects = 0 in {
     /*argstr=*/"$rd, $rs1, $rs2"
   >;
 }
+
+let Predicates = [IsRV32] in
+def : Pat<(int_riscv_mrbr GPR:$rs1, GPR:$rs2),
+          (MRBR GPR:$rs1, GPR:$rs2)>;

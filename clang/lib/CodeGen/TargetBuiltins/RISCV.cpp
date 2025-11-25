@@ -1304,6 +1304,13 @@ Value *CodeGenFunction::EmitRISCVBuiltinExpr(unsigned BuiltinID,
     return Builder.CreateCall(Fn, {});
   }
 
+  //APEX
+  case RISCV::BI__builtin_riscv_mrbr: {
+    llvm::Function *Fn = CGM.getIntrinsic(llvm::Intrinsic::riscv_mrbr);
+    llvm::Value *Args[] = {Ops[0], Ops[1]};
+    return Builder.CreateCall(Fn, Args);
+  }
+
   // XCValu
   case RISCV::BI__builtin_riscv_cv_alu_addN:
     ID = Intrinsic::riscv_cv_alu_addN;
